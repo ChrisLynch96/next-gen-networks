@@ -26,7 +26,7 @@ Follow this [link](https://www.cloudflare.com/img/learning/ddos/what-is-a-ddos-a
 #### Physical Layer
 
 - Responsible for modulation, frequency selection and signal detection
-- Handles communication impairments referenced in lecture one notes [here](https://github.com/ChrisLynch96/NextGenNetworks/blob/master/lec1.pdf)
+- Handles communication impairments referenced in lecture one notes [here](https://github.com/ChrisLynch96/NextGenNetworks/blob/master/lectures/lec1.pdf)
 
 #### DataLink Layer
 
