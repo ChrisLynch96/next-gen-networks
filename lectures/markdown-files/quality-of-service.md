@@ -145,6 +145,16 @@ Jitter:
 
 * Shaper, scheduler
 
+## Queues Types
+
+1. FIFO
+2. Fair Queuing
+3. Strict Priority
+4. Weighted Fair Queuing
+5. Weighted Round Robin
+6. Deficit Weighted Round Robin
+7. Priority-Based Deficit Weighted Round Robin
+
 ### Fair Queueing (FQ)
 
 Separates the different floes into separate logical flows
@@ -185,6 +195,11 @@ Some qeues are served strictly before others and some follow DWRR
 
 Can be an issue if the high priority monopolises the connection. Police the priority queue.
 
+## Early dropping
+
+1. Random Early Discard
+2. Weighted Random Early Discard
+
 ### RED
 
 Drop packets at some probabilistic ratio before the queue fills up. Sending TCP a message (it will lower the transmission rate). This is better than all of a sudden dropping all the packets.
@@ -204,3 +219,4 @@ DWRR: Deficient Weighted Round robbin
 PB-DWRR: Priority Based Deficit Weighted Round Robbin
 RED: Random Early Discard
 WRED: Weighted RED
+DSCP: Differentiated Services Code Point
