@@ -20,7 +20,11 @@ It is prohibitively expensive to ensure that there is a over supply of capacity 
 
 Statistical multiplexing of packets. Not all applications have the same requirements and so prioritization can take place.
 
+QoS is often (and correctly) referred to as QoS differentiation
+
 In times of congestion where statistical multiplexing is happening, we give priority to those packets that will suffer the most from increased packet loss, latency and jitter.
+
+Packet headers of protocols typically have a field that indicates the priority: Ethernet *Priority Code Point (PCP)* or IP *Differentiated Services Code Point (DSCP)* or *MPLS traffic class (TC)*
 
 The priority section of a packet header at each layer can be used to determine the quality of service metric. Do not do this at the application layer (everyone just sets the packet to the highest priority).
 
@@ -54,7 +58,7 @@ Customer SLAs with service provider. (Bandwidth and so on)
 * They might also have a peak information rate (if capacity is available it will be satisfied)
 * Any packet above the threshold will be dropped.
 
-### Two rate colour marking
+### Two rate Three Colour Marking (TrTCM)
 
 *Colour Blind*
 All input traffic is the same
@@ -95,9 +99,11 @@ Tokens are periodically added to the system and each incoming packet has two opt
 1. If credit available: Enter one of the queues (credit consumed)
 2. If no credits: Discarded (No credit consumed)
 
-Bucket depth indicates the maximum number of credits that can be stored at any given time.
+Bucket depth indicates the maximum number of credits that can be stored at any given time. This indicated the burst size limit
 
-Number of tokens per time determined the bandwidth limit.
+The rate at which tokens are taken from th bucket determines the bandwidth.
+
+Increased latency cause by the holding of packets.
 
 ### Shaper implementation: leaky bucket
 
@@ -129,7 +135,7 @@ Changing the COS marking of an incoming packet.
 
 Can be used due to trust issues. The system may not trust the source of the packet.
 
-Can also be used to signal information to the downstream router, e.g to packets arrive marked 1 but one is changed to 2 to indicate that the packet has exceeded the agreed rate i.e green and yellow.
+Can also be used to signal information to the downstream router, e.g to packets A and B arrive marked 1 but Bs COS is changed to 2 to indicate that the packet has exceeded the agreed rate i.e green and yellow.
 
 ### Effects of QoS on packet loss, jitter and latency
 
@@ -191,7 +197,7 @@ Queue is skipped when not enough quantums to transmit packet.
 
 Adds a stricter weighting to packets that ned les latency and jitter.
 
-Some qeues are served strictly before others and some follow DWRR
+Some queues are served strictly before others and some follow DWRR
 
 Can be an issue if the high priority monopolises the connection. Police the priority queue.
 
@@ -208,15 +214,16 @@ Also Weighted Random Early Discard WRED. giving lower priority queues a higher d
 
 ## Acronyms
 
-QoS: Quality of Service
-COS: Class of Service
-CIR: Committed information Rate
-PIR: Permitted Information Rate
-FQ: Fair Queue
-SP: Strict Priority
-WRR: Weighted round robbin
-DWRR: Deficient Weighted Round robbin
-PB-DWRR: Priority Based Deficit Weighted Round Robbin
-RED: Random Early Discard
-WRED: Weighted RED
-DSCP: Differentiated Services Code Point
+* QoS: Quality of Service
+* COS: Class of Service
+* CIR: Committed information Rate
+* PIR: Permitted Information Rate
+* FQ: Fair Queue
+* SP: Strict Priority
+* WRR: Weighted round robbin
+* DWRR: Deficient Weighted Round robbin
+* PB-DWRR: Priority Based Deficit Weighted Round Robbin
+* RED: Random Early Discard
+* WRED: Weighted RED
+* TrTCM: Two rate Three Colour Marking
+* DSCP: Differentiated Services Code Point
