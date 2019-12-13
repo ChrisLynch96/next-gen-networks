@@ -2,6 +2,13 @@
 
 Queuing theory can be used to predict the effects of some change in load or design.
 
+examples:
+
+1. Time-shared computers
+2. Statistical Multiplexer / Concentrator
+3. Multiple Access (Random Access) Network e.g Ethernet or Wireless Network
+4. Web Access e.g clients and server
+
 What does Queuing theory study?
 
 * \# number of users
@@ -12,9 +19,11 @@ What does Queuing theory study?
 This leads to an indication of performance:
 
 * Waiting Time
-* Blocking
+* Blocking?
 
 Elements of a Queuing system
+
+![](markdown-files/images/queue-elements.png)
 
 * Input
 * Queue
@@ -58,7 +67,7 @@ a represents the type of arrival process
 b represents the service time distribution
 
 * M (Markov) denotes exponentially distributed
-* D (Deterministic) denotes constant service time
+* D (Deterministic) denotes constant service times
 * G (General) denotes iid service times following some general distribution
 
 ### m

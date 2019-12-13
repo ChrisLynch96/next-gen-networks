@@ -151,6 +151,16 @@ Jitter:
 
 * Shaper, scheduler
 
+## Queues Types
+
+1. FIFO
+2. Fair Queuing
+3. Strict Priority
+4. Weighted Fair Queuing
+5. Weighted Round Robin
+6. Deficit Weighted Round Robin
+7. Priority-Based Deficit Weighted Round Robin
+
 ### Fair Queueing (FQ)
 
 Separates the different floes into separate logical flows
@@ -190,6 +200,11 @@ Adds a stricter weighting to packets that ned les latency and jitter.
 Some queues are served strictly before others and some follow DWRR
 
 Can be an issue if the high priority monopolises the connection. Police the priority queue.
+
+## Early dropping
+
+1. Random Early Discard
+2. Weighted Random Early Discard
 
 ### RED
 

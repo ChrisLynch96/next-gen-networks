@@ -4,13 +4,13 @@ factors to increase mobile capacity
 
 * Efficiency (MIMO, Smart scheduling, enhanced-CoMP) -> x3
 * Spectrum (Carrier Aggregation, New Bands, Authorized Shared Access) -> x2
-* Density (Advanced Macros, HetNet management, Flexible small cells)
+* Density (Advanced Macros, HetNet management, Flexible small cells) -> x167
 
 Backhaul refers the intermediate layer between the core network and the access layer at the edge.
 
 ## Cell density issue
 
-Backhauling is economically feasible as each base station serves many users
+Backhauling a macro base station is economically feasible as each base station serves many users
 
 As the density increases than the number of users being served is less and thus the economic viability is less.
 
@@ -24,17 +24,23 @@ Now all wires are replaced by a fibre cable.
 
 Now digital processing is being centralized
 
-Connection between BBU and RRU is fibre through a protocol called CPRI
+Connection between BBU and RRU is fibre through a protocol called  Common Public Radio Interface (CPRI)
 
 All digital processing is done at the BBU and then the RF signal is sampled, digitized, and sent over to the RRU for processing.
 
 Baseband unit is in the network and the RRU is on the mast
 
+## BBU Hoteling
+
+Utilising the advantages of a fibre connection between the BBU and the RRU.
+
+Can place the BBU in a different location because the range that we can transfer data is drastically increased by fibre.
+
+Can use a building to store multiple BBUs. The building is more secure, less prone to weather effects, less location constrained, easier for maintenance etc.
+
 ## BBU Pooling
 
-Fibre connection means the link can easily cover many kilometres so why not place the BBU in a different location. Place the BBUs in a central building for security maintenance and ease of access.
-
-Now that multiple antenaes connections are coming to the one building why not use statistical multiplexing of the data and use a smaller number of BBUs.
+Now that multiple antennas connections are coming to the one building why not use statistical multiplexing of the data and use a smaller number of BBUs. Not all cells will be running at peak rate all the time.
 
 NFV: BBUs are now implemented in software running on off the shelf servers along with firewalls and routers etc. No need for dedicated hardware.
 
@@ -55,7 +61,7 @@ where:
 * Na is the number of antennas used
 * Nb is the number of 10MHz frequency bands used
 * Rc is the overhead given by word control ratio (16/15)
-* Rl is the overhead given by he line coding (10/8 or 66/64)
+* Rl is the overhead given by the line coding (10/8 or 66/64)
 
 The rate is independent of the actual rate offered to the users. Always transmits the maximum rate of actual usage.
 
@@ -93,7 +99,6 @@ Split the physical processing or midhauling:
 To get rid of limit on latency we need to choose a split option of 3 or lower (Need to have HARQ performed at the RRU)
 
 eCPRI is the new standard that has identified the capacity and latency requirements for functional splits
-
 
 ## Acronyms
 

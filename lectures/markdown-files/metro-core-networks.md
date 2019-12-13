@@ -40,7 +40,7 @@ No need for two layer networks since IP is directly transmitting on top of WDM n
 
 ### Problems
 
-* all traffic is terminated, every wavelength in the fibre need to have a port in the router. This makes the routers very expensive.
+* all traffic is terminated, every wavelength in the fibre needs to have a port in the router. This makes the routers very expensive.
 
 ## Second Generation Optical networks
 
@@ -54,15 +54,15 @@ The Degrees of a ROADM refer to the number of directions in which a packet can b
 
 Ability to route the route the entire optical channel at once.
 
-* No OEO conversion
-* Massive savings on expensive packet routing/switching resources.
-* Lower energy consumption
+1. No OEO conversion
+2. Massive savings on expensive packet routing/switching resources.
+3. Lower energy consumption
 
-This only applies to the channels that don't need to operate add/dropping
+\* This only applies to the channels that don't need to operate add/dropping
 
 ## Optical Cross Connects
 
-An optical Cross Connects is a device that switches light without converting into a digital electronic signal
+An optical Cross Connects is a device that switches packets without converting them a digital electronic signal. It does this by switching light
 
 ### Fibre Switch
 
